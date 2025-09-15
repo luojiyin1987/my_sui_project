@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sui Web3 DApp</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #4CAF50;
+        }
+        button {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        button:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .status {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #2196F3;
+        }
+        .error {
+            border-left-color: #f44336;
+            background: rgba(244, 67, 54, 0.1);
+        }
+        .success {
+            border-left-color: #4CAF50;
+            background: rgba(76, 175, 80, 0.1);
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Sui Web3 DApp</h1>
+        <p style="text-align: center; font-size: 1.2em; margin-bottom: 30px;">
+            Explore the future of decentralized applications on Sui blockchain
+        </p>
+
+        <div class="grid">
+            <div class="feature">
+                <h3>🔗 Wallet Connection</h3>
+                <button id="connectWallet">Connect Sui Wallet</button>
+                <div id="walletStatus" class="status" style="display: none;"></div>
+            </div>
+
+            <div class="feature">
+                <h3>🪙 Custom Coin</h3>
+                <p>Mint and manage custom tokens on Sui</p>
+                <input type="text" id="mintRecipient" placeholder="Recipient address">
+                <input type="number" id="mintAmount" placeholder="Amount to mint">
+                <button id="mintCoin" disabled>Mint Coins</button>
+                <div id="coinStatus" class="status" style="display: none;"></div>
+            </div>
+
+            <div class="feature">
+                <h3>🎨 NFT Collection</h3>
+                <p>Create and trade unique digital assets</p>
+                <input type="text" id="nftName" placeholder="NFT Name">
+                <input type="text" id="nftDescription" placeholder="NFT Description">
+                <input type="text" id="nftImageUrl" placeholder="Image URL">
+                <input type="text" id="nftRecipient" placeholder="Recipient address">
+                <button id="mintNFT" disabled>Mint NFT</button>
+                <div id="nftStatus" class="status" style="display: none;"></div>
+            </div>
+
+            <div class="feature">
+                <h3>📊 Blockchain Info</h3>
+                <button id="getBalance">Get SUI Balance</button>
+                <button id="getNetworkInfo">Network Info</button>
+                <div id="blockchainStatus" class="status" style="display: none;"></div>
+            </div>
+        </div>
+
+        <div class="feature" style="margin-top: 30px;">
+            <h3>📝 Transaction Log</h3>
+            <div id="transactionLog" style="max-height: 300px; overflow-y: auto;"></div>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

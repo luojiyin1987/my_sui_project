@@ -1,0 +1,20 @@
+{
+  "name": "my-sui-web3-frontend",
+  "version": "1.0.0",
+  "description": "Sui Web3 Frontend Application",
+  "main": "index.js",
+  "scripts": {
+    "dev": "http-server . -p 3000",
+    "build": "echo 'Build completed'",
+    "test": "echo 'No tests specified'"
+  },
+  "dependencies": {
+    "@mysten/sui.js": "^0.54.1"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "keywords": ["sui", "web3", "blockchain", "dapp"],
+  "author": "Sui Web3 Developer",
+  "license": "MIT"
+}
